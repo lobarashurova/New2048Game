@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_graph"
+    app:startDestination="@id/startScreen">
+
+    <fragment
+        android:id="@+id/startScreen"
+        tools:layout="@layout/screen_start"
+        android:name="uz.mlsoft.new2048game.presentation.screens.StartScreen"
+        android:label="StartScreen" >
+        <action
+            android:id="@+id/action_startScreen_to_gameScreen"
+            app:destination="@id/gameScreen" />
+        <action
+            android:id="@+id/action_startScreen_to_infoScreen"
+            app:destination="@id/infoScreen"
+            app:popUpTo="@id/startScreen" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_game"
+        android:id="@+id/gameScreen"
+        android:name="uz.mlsoft.new2048game.presentation.screens.GameScreen"
+        android:label="GameScreen" />
+    <fragment
+        tools:layout="@layout/screen_info"
+        android:id="@+id/infoScreen"
+        android:name="uz.mlsoft.new2048game.presentation.screens.InfoScreen"
+        android:label="InfoScreen" />
+</navigation>

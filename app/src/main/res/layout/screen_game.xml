@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/image">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center|left"
+            android:text="2048"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            app:fontFamily="@font/font_text"
+            app:layout_constraintBottom_toTopOf="@id/card_view"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/restart_btn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/back_rotate"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:padding="10dp"
+            android:src="@drawable/rotate"
+            android:tint="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/home_btn"
+            android:layout_marginEnd="20sp"
+            app:layout_constraintBottom_toTopOf="@id/card_view"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/home_btn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/back_rotate"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:padding="10dp"
+            android:src="@drawable/home"
+            android:tint="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/card_view"
+            app:layout_constraintEnd_toEndOf="parent"
+             />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="80dp"
+            android:id="@+id/scroe_linear"
+            android:layout_height="60dp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/back_scored"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/restart_btn"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="score"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                 />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/score_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                tools:text="158"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:fontFamily="@font/font_text"
+
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="20sp"
+            app:layout_constraintEnd_toStartOf="@id/scroe_linear"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/back_scored"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/restart_btn"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="highest score"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:gravity="center" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/highest_score_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                tools:text="250"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:fontFamily="@font/font_text" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--    <androidx.appcompat.widget.AppCompatImageView-->
+        <!--        android:id="@+id/voice_btn"-->
+        <!--        android:layout_width="55dp"-->
+        <!--        android:layout_height="55dp"-->
+        <!--        android:background="@drawable/back_rotate"-->
+        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@id/card_view"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        android:src="@drawable/mute"-->
+        <!--        android:tint="@color/white"-->
+        <!--        android:padding="10dp"-->
+        <!--        android:foreground="?selectableItemBackgroundBorderless"-->
+        <!--        />-->
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20sp"
+            android:layout_marginTop="45dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/mainView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#3C446C"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/PlayButton"
+                        app:fontFamily="@font/font_text"
+                        tools:text="0" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/overconteiner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:background="#AAA4A4"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/game_over"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_text"
+            android:text="Game Over"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/tocuh_lottie"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="-100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/game_over"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/touch" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

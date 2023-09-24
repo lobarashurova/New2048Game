@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_start">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/game_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font_text"
+        android:text="2048 \ngame"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/start_btn"
+        android:layout_width="300dp"
+        android:layout_height="85dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/game_text"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/continue_new" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/continue_btn"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/start_btn"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_marginTop="-10dp"
+        app:lottie_rawRes="@raw/start_new" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/info_btn"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_margin="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/new_info_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
