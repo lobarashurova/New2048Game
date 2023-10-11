@@ -65,6 +65,7 @@ class GameScreen : Fragment(R.layout.screen_game) {
 
 
     private fun showNewScore() {
+        
         myPref.edit().putInt("COUNT", controller.getScore()).apply()
         myPref.edit().putInt("HIGH", controller.getScore()).apply()
         binding.scoreText.text = "${myPref.getInt("COUNT", 0)}"
